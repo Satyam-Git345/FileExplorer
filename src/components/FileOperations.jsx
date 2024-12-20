@@ -6,7 +6,7 @@ const FileOperations = ({ addFolder, deleteFile, renameFile }) => {
 
   const handleAddFolder = () => {
     if (folderName.trim()) {
-      addFolder("root", folderName); // Adding to the root for simplicity
+      addFolder("root", folderName); 
       setFolderName("");
     }
   };
@@ -17,7 +17,7 @@ const FileOperations = ({ addFolder, deleteFile, renameFile }) => {
 
   const handleRenameFile = (id) => {
     renameFile(id, newFileName);
-    setNewFileName(""); // Reset the input after renaming
+    setNewFileName(""); 
   };
 
   return (

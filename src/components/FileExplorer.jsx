@@ -8,14 +8,14 @@ const FileExplorer = () => {
   const [fileSystem, setFileSystem] = useState(fileSystemData);
   const [currentFile, setCurrentFile] = useState(null);
 
-  // Handle file click (to view the file content)
+  
   const handleFileClick = (file) => {
     if (file.type === "file") {
       setCurrentFile(file);
     }
   };
 
-  // Add a new folder under a specified parentId
+  
   const addFolder = (parentId, folderName) => {
     const newFileSystem = { ...fileSystem };
     const parentFolder = findFolderById(newFileSystem, parentId);
@@ -28,41 +28,40 @@ const FileExplorer = () => {
     setFileSystem(newFileSystem);
   };
 
-  // Delete a file or folder by ID
+  
   const deleteFile = (id) => {
     const newFileSystem = { ...fileSystem };
     deleteFileById(newFileSystem, id);
     setFileSystem(newFileSystem);
   };
 
-  // Helper function to recursively delete a file/folder by ID
+  
   const deleteFileById = (fileSystem, id) => {
     for (let i = 0; i < fileSystem.children.length; i++) {
       if (fileSystem.children[i].id === id) {
-        fileSystem.children.splice(i, 1); // Delete the item
+        fileSystem.children.splice(i, 1); 
         return;
       } else if (fileSystem.children[i].type === "folder") {
-        deleteFileById(fileSystem.children[i], id); // Recursive deletion
+        deleteFileById(fileSystem.children[i], id); 
       }
     }
   };
 
-  // Rename a file/folder by its ID
   const renameFile = (id, newName) => {
-    if (!newName.trim()) return; // Validation for empty names
+    if (!newName.trim()) return; 
     const newFileSystem = { ...fileSystem };
     renameFileById(newFileSystem, id, newName);
     setFileSystem(newFileSystem);
   };
 
-  // Helper function to recursively rename a file/folder by ID
+  
   const renameFileById = (fileSystem, id, newName) => {
     for (let i = 0; i < fileSystem.children.length; i++) {
       if (fileSystem.children[i].id === id) {
-        fileSystem.children[i].name = newName; // Rename the item
+        fileSystem.children[i].name = newName; 
         return;
       } else if (fileSystem.children[i].type === "folder") {
-        renameFileById(fileSystem.children[i], id, newName); // Recursive rename
+        renameFileById(fileSystem.children[i], id, newName); 
       }
     }
   };
