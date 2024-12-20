@@ -1,0 +1,17 @@
+.file-explorer {
+  display: flex;
+}
+
+.file-tree {
+  width: 300px;
+  border-right: 1px solid #ccc;
+}
+
+.file-content {
+  flex: 1;
+  padding: 20px;
+}
+
+button {
+  margin-top: 10px;
+}

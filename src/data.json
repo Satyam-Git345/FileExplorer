@@ -1,0 +1,26 @@
+{
+    "id": "root",
+    "name": "Root",
+    "type": "folder",
+    "children": [
+      {
+        "id": "1",
+        "name": "Documents",
+        "type": "folder",
+        "children": [
+          { "id": "2", "name": "Resume.docx", "type": "file" },
+          { "id": "3", "name": "CoverLetter.pdf", "type": "file" }
+        ]
+      },
+      {
+        "id": "4",
+        "name": "Pictures",
+        "type": "folder",
+        "children": [
+          { "id": "5", "name": "Vacation.jpg", "type": "file" },
+          { "id": "6", "name": "Birthday.png", "type": "file" }
+        ]
+      }
+    ]
+  }
+  
